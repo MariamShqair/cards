@@ -1,0 +1,3 @@
+@section('logo')
+   {{"Logo"}}
+@endsection
