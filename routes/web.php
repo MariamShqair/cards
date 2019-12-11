@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,23 @@
 //    Route::patch('/task/{id}','TasksController@update');
 //    Route::delete('/destroy/{id}','TaskController@distroy');
 //});
+Route::get('pic',function (){
+    //return $request->get('photo');
+    return view('pic');
+});
+Route::post('pic',function (Request $request){
+    if ($request->hasFile('photo')) {
+
+        $path = $request->file('photo')->storeAs(
+            'avatars', time().'.'.$request->file('photo')->extension()
+        );
+
+        dd($path);
+
+    }
+
+    return back();
+});
 
 Route::group(['prefix' => 'cards'] , function(){
     Route::get('/','CardController@index')->name('cards.index');

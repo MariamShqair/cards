@@ -5,12 +5,16 @@
 
     <div class="container">
 
-        <form method="post" action="{{route('cards.update',$card->id)}}">
+        <form method="post" action="{{route('cards.update',$card->id)}}" enctype="multipart/form-data">
             @csrf
             @method('patch');
             <div class="form-group">
                 <label for="imgUrl">Image</label>
-                <img src="{{$card->imgUrl}}">
+                <img src="{{Storage::url($card->imgUrl)}}">
+                <div class="form-group">
+                    <label for="imgUrl">put image here</label>
+                    <input type="file" name="imgUrl" class="form-control" id="imgUrl" placeholder="imgUrl">
+                </div>
 
             </div>
             <div class="form-group">

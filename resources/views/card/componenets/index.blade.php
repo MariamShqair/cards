@@ -24,7 +24,7 @@
                     <div class="col-sm-4 card">
                         <div class="card-img" style="width: 100%;">
                             <div class="card-wrapper">
-                                <img src={{$card->imgUrl}} class="card-img-top" alt="...">
+                                <img src= "{{Storage::url($card->imgUrl)}}" class="card-img-top" alt="...">
                             </div>
                             <div class="card-body">
                                 <a href="{{ route('cards.show',$card->id)}}">

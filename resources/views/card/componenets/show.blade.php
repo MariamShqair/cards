@@ -5,7 +5,7 @@
         <div>
             <div class="form-group">
                 <label for="imgUrl">Image</label>
-                <img src="{{$card->imgUrl}}">
+                <img src="{{Storage::url($card->imgUrl)}}">
 
             </div>
             <div class="form-group">

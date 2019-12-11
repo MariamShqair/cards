@@ -17,11 +17,11 @@
             </div>
         @endif
 
-        <form method="post" action="{{route('cards.store')}}">
+        <form method="post" action="{{route('cards.store')}}"  enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="imgUrl">put image here</label>
-                <input type="text" name="imgUrl" class="form-control" id="imgUrl" placeholder="imgUrl">
+                <input type="file" name="imgUrl" class="form-control" id="imgUrl" placeholder="imgUrl">
             </div>
             <div class="form-group">
                 <label for="title">put title here</label>
